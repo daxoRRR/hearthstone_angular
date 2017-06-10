@@ -1,0 +1,33 @@
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+
+.header .navbar {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.header .navbar-brand {
+  height: 80px;
+}
+
+.header .nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #a6dbf4;
+}
+.header .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+
+.active a {
+  background: #f9e04d !important;
+  color: #688b9c !important;
+}

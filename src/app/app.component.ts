@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+
+  page_actual = "home";
+
+  changePage(page: string){
+    this.page_actual = page;    
+  }
+
 }

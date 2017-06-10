@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="app-cards">
+    <div>
+      <ul>
+        <li *ngFor="let i of classes"><button type="button" (click)="filters_classes(i)">{{i}}</button></li>
+      </ul>
+    </div>
+    <ul>
+      <li *ngFor="let card of cards"><img src="{{card.img}}" alt=""></li>
+    </ul>
+  </div>
+</div>
+
+<button class="btn" (click)="onGetData()">get some JSON data</button>
+<ul>
+  <li *ngFor="let item of data">test</li>
+</ul>
