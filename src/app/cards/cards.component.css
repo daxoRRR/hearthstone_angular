@@ -2,3 +2,14 @@
   border: solid 1px rgba(100,102,105,0.3);
   height: auto;
 }
+.classe_list li {
+  display:block;
+  float:left;   
+  width:50px;
+}
+ul{
+  list-style-type: none;
+}
+button > img {
+  width: 50px;
+}

@@ -4,7 +4,7 @@ import { Http, Headers} from "@angular/http";
 @Injectable ()
 export class HttpService {
 
-  private url: string = "https://omgvamp-hearthstone-v1.p.mashape.com/cards?locale=frFR";
+  private url: string = "https://omgvamp-hearthstone-v1.p.mashape.com/cards?locale=frFR&collectible=1";
 
   constructor(private myHttp: Http){}
 
@@ -19,7 +19,7 @@ export class HttpService {
   }
 
   getDataClasses(classe:string){
-    let url = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/"+classe+"?locale=frFR";
+    let url = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/"+classe+"?locale=frFR&collectible=1";
     return this.myHttp.get(url, { headers: this.getHeader()});
   }
 }

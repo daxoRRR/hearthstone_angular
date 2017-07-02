@@ -21,7 +21,7 @@ const appRoute: Routes = [
     AppComponent,
     HomeComponent,
     CardsComponent,
-    ContactsComponent 
+    ContactsComponent
   ],
   imports: [
     BrowserModule,

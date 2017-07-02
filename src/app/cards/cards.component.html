@@ -1,17 +1,12 @@
-<div class="container">
+<div class="container content">
   <div class="app-cards">
     <div>
-      <ul>
-        <li *ngFor="let i of classes"><button type="button" (click)="filters_classes(i)">{{i}}</button></li>
+      <ul class="classe_list">
+        <li *ngFor="let classe of classes; let i = index"><button type="button" (click)="filters_classes(classe, i)"><img src="{{images[i]}}"></button></li>
       </ul>
     </div>
     <ul>
-      <li *ngFor="let card of cards"><img src="{{card.img}}" alt=""></li>
+      <li *ngFor="let card of cards"><div class="col-md-3 col-sm-6 col-xs-12"><img src="{{card.img}}" alt=""></div></li>
     </ul>
   </div>
 </div>
-
-<button class="btn" (click)="onGetData()">get some JSON data</button>
-<ul>
-  <li *ngFor="let item of data">test</li>
-</ul>

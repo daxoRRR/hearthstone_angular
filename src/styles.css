@@ -7,3 +7,15 @@
     outline: 0;
     vertical-align: top;
 }
+
+body{
+  background-image: url(/assets/bg-hs.jpg); 
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+}
+
+.content{
+	background-color: white;
+	-webkit-box-shadow: 0 0 8px #000; box-shadow: 0 0 8px #000;
+}
