@@ -1,12 +1,29 @@
 <div class="container content">
   <div class="app-cards">
-    <div>
-      <ul class="classe_list">
-        <li *ngFor="let classe of classes; let i = index"><button type="button" (click)="filters_classes(classe, i)"><img src="{{images[i]}}"></button></li>
-      </ul>
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="classe_list">
+          <li *ngFor="let classe of classes; let i = index"><button type="button" (click)="filters_classes(classe, i)"><img src="{{images[i]}}"></button></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
     </div>
-    <ul>
-      <li *ngFor="let card of cards"><div class="col-md-3 col-sm-6 col-xs-12"><img src="{{card.img}}" alt=""></div></li>
-    </ul>
+    <div class="row bgCards">
+      <div class="col-md-12">
+        <ul>
+          <li *ngFor="let card of cards | paginate: { itemsPerPage: 8, currentPage: p, maxSize: 1, previousLabel: 'Précédent', nextLabel: 'Suivant'}">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <span style="position: relative;">
+                <img class="cards" src="{{card.img}}" onerror="this.onerror=null;this.src='/assets/cardback_404.png';" alt="{{card.name}}">
+                <img *ngIf="dansFavoris(card);" src="/assets/class_icon/colorful/favoris.png" id="fav{{card.cardId}}" class="imgFavoris" (click)="handleStorage(card);" title="Favoris">
+                <img *ngIf="!dansFavoris(card);" src="/assets/class_icon/colorless/favoris.png" id="fav{{card.cardId}}" class="imgFavoris" (click)="handleStorage(card);" title="Favoris">
+              </span>
+            </div>  
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

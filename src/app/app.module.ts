@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CardsComponent } from './cards/cards.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import {HttpService} from "./cards/cards.service";
 
@@ -25,6 +26,7 @@ const appRoute: Routes = [
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     HttpModule,
     RouterModule.forRoot(appRoute)
   ],
