@@ -13,9 +13,9 @@
       </div>
       <div id="navbar3" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li [ngClass]="(page_actual == 'home') ? 'active' : ''"><a routerLink="" (click)="changePage('home')">Home</a></li>
-          <li [ngClass]="(page_actual == 'cards') ? 'active' : ''"><a routerLink="/cards" (click)="changePage('cards')">Cards</a></li>
-          <li [ngClass]="(page_actual == 'contacts') ? 'active' : ''"><a routerLink="/contacts" (click)="changePage('contacts')">Contact</a></li>
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="">Home</a></li>
+          <li [routerLinkActive]="['active']"><a routerLink="/cards">Cards</a></li>
+          <li [routerLinkActive]="['active']"><a routerLink="/contacts">Contact</a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->

@@ -6,7 +6,7 @@
           <li *ngFor="let classe of classes; let i = index"><button type="button" (click)="filters_classes(classe, i)"><img src="{{images[i]}}"></button></li>
         </ul>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-xs-12">
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
     </div>
@@ -24,6 +24,9 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div class="col-md-4 col-xs-12 hidden-md hidden-sm hidden-lg">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
   </div>
 </div>
