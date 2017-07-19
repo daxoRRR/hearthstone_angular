@@ -119,16 +119,22 @@ export class CardsComponent {
   handleStorage(card){
     //passé this en parametre ne renvoyait pas la balise img mais cardComponent. On récupère la balise img d'une autre facon :
     var img = <HTMLImageElement>document.querySelector('#fav'+card.cardId);
-    
+
     if(!this.dansFavoris(card)){
       //ajout aux favoris
       img.src="/assets/class_icon/colorful/favoris.png";
+      if(this.favoris == null){
+        this.favoris = [];
+      }
       this.favoris.push(card);
       localStorage.setItem('mesFavoris', JSON.stringify(this.favoris));
     }
     else{
       //on le retire des favoris
       img.src="/assets/class_icon/colorless/favoris.png";
+      if(this.favoris == null){
+        this.favoris = [];
+      }
       var size = this.favoris.length;
       for(let i =0; i < size; i++){
         if(this.favoris[i].cardId == card.cardId){
@@ -136,15 +142,17 @@ export class CardsComponent {
           localStorage.setItem('mesFavoris', JSON.stringify(this.favoris));
           if(this.actualClasse == "Favoris"){
             this.cards = this.favoris;
-          } 
+          }
           break;
         }
       }
-
     }
   }
 
   dansFavoris(card){
+    if(this.favoris == null){
+      this.favoris = [];
+    }
     var sizeOf = this.favoris.length;
     for(let i =0; i < sizeOf; i++){
       if(this.favoris[i].cardId == card.cardId){
